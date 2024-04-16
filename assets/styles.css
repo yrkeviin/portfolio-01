@@ -10,10 +10,10 @@
 }
 
 :root {
- --bg-color: #080808;
- --secondary-bg-color: #121212;
- --text-color: #e4e4e4;
- --main-color: #ea8eff;
+    --bg-color: #9090ff;
+    --secondary-bg-color: #121212;
+    --text-color: #e4e4e4;
+    --main-color: #51ff00;
 }
 
 * html {
@@ -22,5 +22,52 @@
 
 body {
     background-color: var(--bg-color);
-    color: var(--text-color)
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 8rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between; /* Alinha os elementos um ao lado do outro no eixo horizontal*/
+    align-items: center; /* Alinha os elementos no centro no eixo vertical*/
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.10);
+}
+
+.logo span {
+    text-shadow: 0 0 5px var(--main-color);
+    color: var(--main-color);
+}
+
+.navbar a {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+    border-radius: 3px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
 }
